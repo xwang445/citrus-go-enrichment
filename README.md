@@ -1,25 +1,72 @@
 # Citrus GO Enrichment Pipeline
 
-This repository contains R scripts for building a Citrus clementina gene-to-GO annotation table from CPBD and running GO enrichment for candidate gene lists.
+GO enrichment pipeline for Citrus clementina candidate genes using CPBD annotations.
+
+## Installation
+
+Install required R packages:
+
+```r
+install.packages(c("data.table", "jsonlite", "httr2", "rvest"))
+
+BiocManager::install(c(
+  "clusterProfiler",
+  "enrichplot",
+  "GO.db",
+  "AnnotationDbi",
+  "rtracklayer"
+))
+```
+
+## Repository Structure
+
+```text
+citrus-go-enrichment/
+├── scripts/
+│   ├── 01_download_cpbd_gene2go.R
+│   ├── 02_prepare_go_terms.R
+│   └── 03_run_go_enrichment_by_trait.R
+├── data/
+├── results/
+└── README.md
+```
 
 ## Workflow
 
-1. Download gene-to-GO annotations from CPBD.
-2. Fill GO term descriptions using GO.db and QuickGO.
-3. Run GO enrichment for candidate genes grouped by phenotype.
-4. Generate enrichment tables and dotplots.
+### Step 1. Build gene-to-GO annotation table
 
-## Requirements
+```bash
+Rscript scripts/01_download_cpbd_gene2go.R \
+  data/Cclementina_182_v1.0.gene_exons.gff3 \
+  data/Cclementina_CPBD_gene2GO.tsv
+```
 
-R packages:
+### Step 2. Resolve GO term descriptions
 
-- data.table
-- rtracklayer
-- rvest
-- clusterProfiler
-- enrichplot
-- ggplot2
-- GO.db
-- AnnotationDbi
-- httr2
-- jsonlite
+```bash
+Rscript scripts/02_prepare_go_terms.R \
+  data/Cclementina_CPBD_gene2GO.tsv \
+  data/Cclementina_GO_terms.tsv
+```
+
+### Step 3. Run GO enrichment
+
+```bash
+Rscript scripts/03_run_go_enrichment_by_trait.R \
+  data/candidate_genes_by_trait \
+  data/Cclementina_CPBD_gene2GO.tsv \
+  data/Cclementina_GO_terms.tsv \
+  results/GO_enrichment_plots
+```
+
+## Output
+
+The pipeline generates:
+
+```text
+results/
+├── All_phenotypes_GO_enrichment.tsv
+├── Cytidine_GO_dotplot.png
+├── Gamma.Aminobutyric.acid_GO_dotplot.png
+└── ...
+```
