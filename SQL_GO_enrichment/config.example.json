@@ -1,0 +1,7 @@
+{
+  "candidate_directory": "inputs/candidate_genes_by_trait",
+  "annotation_directory": "inputs/annotation",
+  "association_file": "inputs/significant_SNP_gene_annotation_50kb_forced_scaffold.tsv",
+  "original_script": "inputs/02_run_go_enrichment_by_trait.R",
+  "repository": ".."
+}

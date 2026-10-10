@@ -70,3 +70,19 @@ results/
 ├── Gamma.Aminobutyric.acid_GO_dotplot.png
 └── ...
 ```
+
+## SQL-Based GO Enrichment Pipeline
+
+The [SQL implementation](SQL_GO_enrichment/README.md) adds SQLite for reproducible integration of candidate genes, genomic coordinates, SNP associations and GO annotations. The existing R pipeline remains unchanged.
+
+A normalized database uses primary and foreign keys for genes, traits, gene–GO mappings, association evidence and enrichment results, with source hashes and original identifiers retained for auditing. Ten reusable SQL queries cover candidate retrieval, GO joins, shared genes, annotation coverage, genomic intervals and metadata checks. Python performs ETL and validation; R/clusterProfiler performs enrichment using the original statistical parameters and background.
+
+To reproduce the analysis, configure the original input locations using `SQL_GO_enrichment/config.example.json`, then run:
+
+```bash
+python3 SQL_GO_enrichment/scripts/run_all.py
+```
+
+See the [setup and input requirements](SQL_GO_enrichment/README.md#reproduce-the-analysis) before running. Databases, raw inputs, private configuration and generated reports are excluded from Git; lightweight validation and benchmark summaries are included.
+
+Validation reproduced all 61 significant results across 12 of 16 traits exactly against the current saved results, and all 881 tested results matched a fresh file-based control. See the [validation report](SQL_GO_enrichment/docs/reference/validation_report.md) for the older output folder’s description-only differences and historical-version limitations.

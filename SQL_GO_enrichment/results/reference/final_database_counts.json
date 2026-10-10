@@ -1,0 +1,17 @@
+{
+  "sources": 54,
+  "genes": 24533,
+  "gene_aliases": 70835,
+  "traits": 16,
+  "trait_genes": 3120,
+  "candidate_records": 3120,
+  "go_terms": 2441,
+  "gene_go": 38855,
+  "annotation_records": 34980,
+  "associations": 280,
+  "association_genes": 3499,
+  "association_records": 3499,
+  "analysis_runs": 1,
+  "enrichment_results": 881,
+  "enrichment_genes": 2617
+}

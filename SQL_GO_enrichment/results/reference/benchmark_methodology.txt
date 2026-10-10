@@ -1,0 +1,5 @@
+Warm-cache retrieval only; file parsing and DB build excluded.
+data.table automatic indexes may be created during warm-up.
+Object bytes measure returned result size, not peak process memory.
+Index comparison uses two RAM copies, removing only named secondary indexes; primary-key indexes remain.
+Extra term_lookup operation isolates go_id secondary-index selectivity.

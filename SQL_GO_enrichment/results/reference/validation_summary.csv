@@ -1,0 +1,9 @@
+cohort,status,comparisons
+GO_enrichment_plots,different,8
+GO_enrichment_plots,exact,614
+GO_enrichment_plots,missing_original,4
+GO_enrichment_results,exact,626
+fresh_file_control,exact,504
+fresh_file_control_all_tested,exact,7064
+input_counts,exact,5
+original_summary,exact,48

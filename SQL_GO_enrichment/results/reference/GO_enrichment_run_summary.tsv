@@ -1,0 +1,17 @@
+Phenotype	N_candidate_genes	N_genes_with_GO	N_tested_terms	N_significant_terms	Status
+Cytidine	13	12	14	4	success
+Gamma.Aminobutyric.acid	195	135	105	2	success
+Guanosine	17	12	10	1	success
+Isoleucine	29	19	20	0	no_significant_GO_terms
+Leucine	33	23	25	0	no_significant_GO_terms
+Lysine	11	10	10	6	success
+Methionine.sulfoxide	37	27	19	3	success
+NAD	279	190	121	3	success
+Phenylalanine	31	25	20	12	success
+Threonine	15	7	11	5	success
+Tyrosine	31	25	20	12	success
+UDP.glucose	59	45	41	0	no_significant_GO_terms
+mole_228	13	9	9	0	no_significant_GO_terms
+mole_62	72	48	50	4	success
+mole_696	2196	1445	363	6	success
+mole_98	89	56	43	3	success

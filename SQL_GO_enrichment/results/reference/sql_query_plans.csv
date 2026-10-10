@@ -1,0 +1,41 @@
+operation,engine,id,parent,notused,detail
+gene_to_go_join,sqlite_disk_indexed,3,0,132,SCAN tg
+gene_to_go_join,sqlite_disk_indexed,5,0,46,SEARCH gg USING COVERING INDEX sqlite_autoindex_gene_go_1 (gene_id=?)
+gene_to_go_join,sqlite_memory_indexed,3,0,132,SCAN tg
+gene_to_go_join,sqlite_memory_indexed,5,0,46,SEARCH gg USING COVERING INDEX sqlite_autoindex_gene_go_1 (gene_id=?)
+gene_to_go_join,sqlite_memory_no_secondary_indexes,3,0,132,SCAN tg
+gene_to_go_join,sqlite_memory_no_secondary_indexes,5,0,46,SEARCH gg USING COVERING INDEX sqlite_autoindex_gene_go_1 (gene_id=?)
+candidate_retrieval,sqlite_disk_indexed,2,0,92,SEARCH trait_genes USING COVERING INDEX sqlite_autoindex_trait_genes_1 (trait_id=?)
+candidate_retrieval,sqlite_memory_indexed,2,0,92,SEARCH trait_genes USING COVERING INDEX sqlite_autoindex_trait_genes_1 (trait_id=?)
+candidate_retrieval,sqlite_memory_no_secondary_indexes,2,0,92,SEARCH trait_genes USING COVERING INDEX sqlite_autoindex_trait_genes_1 (trait_id=?)
+annotation_coverage,sqlite_disk_indexed,6,0,132,SCAN tg USING COVERING INDEX sqlite_autoindex_trait_genes_1
+annotation_coverage,sqlite_disk_indexed,17,0,0,CORRELATED SCALAR SUBQUERY 1
+annotation_coverage,sqlite_disk_indexed,21,17,46,SEARCH gg USING COVERING INDEX sqlite_autoindex_gene_go_1 (gene_id=?)
+annotation_coverage,sqlite_memory_indexed,6,0,132,SCAN tg USING COVERING INDEX sqlite_autoindex_trait_genes_1
+annotation_coverage,sqlite_memory_indexed,17,0,0,CORRELATED SCALAR SUBQUERY 1
+annotation_coverage,sqlite_memory_indexed,21,17,46,SEARCH gg USING COVERING INDEX sqlite_autoindex_gene_go_1 (gene_id=?)
+annotation_coverage,sqlite_memory_no_secondary_indexes,6,0,132,SCAN tg USING COVERING INDEX sqlite_autoindex_trait_genes_1
+annotation_coverage,sqlite_memory_no_secondary_indexes,17,0,0,CORRELATED SCALAR SUBQUERY 1
+annotation_coverage,sqlite_memory_no_secondary_indexes,21,17,46,SEARCH gg USING COVERING INDEX sqlite_autoindex_gene_go_1 (gene_id=?)
+shared_genes,sqlite_disk_indexed,6,0,132,SCAN trait_genes USING COVERING INDEX idx_trait_genes_gene
+shared_genes,sqlite_memory_indexed,6,0,132,SCAN trait_genes USING COVERING INDEX idx_trait_genes_gene
+shared_genes,sqlite_memory_no_secondary_indexes,6,0,132,SCAN trait_genes
+shared_genes,sqlite_memory_no_secondary_indexes,8,0,0,USE TEMP B-TREE FOR GROUP BY
+multi_trait_aggregation,sqlite_disk_indexed,7,0,132,SCAN tg
+multi_trait_aggregation,sqlite_disk_indexed,9,0,46,SEARCH gg USING COVERING INDEX sqlite_autoindex_gene_go_1 (gene_id=?)
+multi_trait_aggregation,sqlite_disk_indexed,13,0,0,USE TEMP B-TREE FOR GROUP BY
+multi_trait_aggregation,sqlite_disk_indexed,59,0,0,USE TEMP B-TREE FOR count(DISTINCT)
+multi_trait_aggregation,sqlite_disk_indexed,61,0,0,USE TEMP B-TREE FOR count(DISTINCT)
+multi_trait_aggregation,sqlite_memory_indexed,7,0,132,SCAN tg
+multi_trait_aggregation,sqlite_memory_indexed,9,0,46,SEARCH gg USING COVERING INDEX sqlite_autoindex_gene_go_1 (gene_id=?)
+multi_trait_aggregation,sqlite_memory_indexed,13,0,0,USE TEMP B-TREE FOR GROUP BY
+multi_trait_aggregation,sqlite_memory_indexed,59,0,0,USE TEMP B-TREE FOR count(DISTINCT)
+multi_trait_aggregation,sqlite_memory_indexed,61,0,0,USE TEMP B-TREE FOR count(DISTINCT)
+multi_trait_aggregation,sqlite_memory_no_secondary_indexes,7,0,132,SCAN tg
+multi_trait_aggregation,sqlite_memory_no_secondary_indexes,9,0,46,SEARCH gg USING COVERING INDEX sqlite_autoindex_gene_go_1 (gene_id=?)
+multi_trait_aggregation,sqlite_memory_no_secondary_indexes,13,0,0,USE TEMP B-TREE FOR GROUP BY
+multi_trait_aggregation,sqlite_memory_no_secondary_indexes,59,0,0,USE TEMP B-TREE FOR count(DISTINCT)
+multi_trait_aggregation,sqlite_memory_no_secondary_indexes,61,0,0,USE TEMP B-TREE FOR count(DISTINCT)
+term_lookup,sqlite_disk_indexed,2,0,59,SEARCH gene_go USING COVERING INDEX idx_gene_go_term (go_id=?)
+term_lookup,sqlite_memory_indexed,2,0,59,SEARCH gene_go USING COVERING INDEX idx_gene_go_term (go_id=?)
+term_lookup,sqlite_memory_no_secondary_indexes,2,0,167,SCAN gene_go USING COVERING INDEX sqlite_autoindex_gene_go_1
