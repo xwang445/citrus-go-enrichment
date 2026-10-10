@@ -1,0 +1,26 @@
+# Local databases and large biological datasets
+*.sqlite
+*.sqlite-journal
+*.sqlite-wal
+*.sqlite-shm
+*.db
+*.fastq
+*.fastq.gz
+*.bam
+*.vcf.gz
+
+# Local tooling and secrets
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
+.env
+*.log
+
+# Local SQL workflow configuration, inputs and generated reports
+/SQL_GO_enrichment/config.json
+/SQL_GO_enrichment/inputs/
+/SQL_GO_enrichment/docs/generated/
+/SQL_GO_enrichment/results/*
+!/SQL_GO_enrichment/results/README.md
+!/SQL_GO_enrichment/results/reference/

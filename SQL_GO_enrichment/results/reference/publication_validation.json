@@ -1,0 +1,21 @@
+{
+  "database_checks_passed": 71,
+  "automated_tests_passed": 11,
+  "significant_results": 61,
+  "tested_results": 881,
+  "traits": 16,
+  "traits_with_significant_results": 12,
+  "current_saved_results": "exact match",
+  "fresh_file_control_all_tested": "exact match",
+  "older_plot_output_description_differences": 8,
+  "older_plot_output_missing_files": 4,
+  "source_hash_checks_passed": 54,
+  "original_script_sha256": {
+    "scripts/01_download_cpbd_gene2go.R": "fab1d706f5913e51392fcfc4d43aba505054ab9da6fc31e0fbd73b66e4c90abf",
+    "scripts/02_prepare_go_terms.R": "ce36043c86c3385e843aea0af7cdfd2a6a8bdc1be62a61b10535dce10cde8731",
+    "scripts/03_run_go_enrichment_by_trait.Ru": "4d46212c582ce212f4b06fb3d150958bf3ef3c618d51c9298e59352354eb247d"
+  },
+  "original_pipeline_git_diff_empty": true,
+  "full_workflow_status": "all stages completed",
+  "portable_config": "SQL_GO_CONFIG or ignored config.json; relative paths resolved against configuration directory"
+}

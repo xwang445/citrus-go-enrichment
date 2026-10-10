@@ -1,0 +1,1 @@
+SELECT t.trait_name,tg.gene_id,go.go_id,go.go_name,go.ontology FROM traits t INNER JOIN trait_genes tg USING(trait_id) INNER JOIN gene_go gg USING(gene_id) INNER JOIN go_terms go USING(go_id) WHERE t.trait_name=:trait ORDER BY tg.gene_id,go.go_id;

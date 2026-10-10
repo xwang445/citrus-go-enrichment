@@ -1,0 +1,1 @@
+WITH annotated AS (SELECT DISTINCT gene_id FROM gene_go) SELECT t.trait_name,COUNT(tg.gene_id) AS candidate_count,COUNT(a.gene_id) AS annotated_count,1.0*COUNT(a.gene_id)/NULLIF(COUNT(tg.gene_id),0) AS coverage FROM traits t LEFT JOIN trait_genes tg USING(trait_id) LEFT JOIN annotated a USING(gene_id) GROUP BY t.trait_id ORDER BY t.trait_name;

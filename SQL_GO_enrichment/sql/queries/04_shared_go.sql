@@ -1,0 +1,1 @@
+SELECT gg.go_id,gt.go_name,COUNT(DISTINCT tg.trait_id) AS trait_count,COUNT(DISTINCT tg.gene_id) AS gene_count FROM trait_genes tg INNER JOIN gene_go gg USING(gene_id) INNER JOIN go_terms gt USING(go_id) GROUP BY gg.go_id HAVING COUNT(DISTINCT tg.trait_id)>1 ORDER BY trait_count DESC,gg.go_id;
